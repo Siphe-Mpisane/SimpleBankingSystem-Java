@@ -1,15 +1,21 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BankAccount {
     private String accountNumber;
     private double currentAmount;
     private Customer customer;
+    private List<Transaction> transactionlist;
 
     public BankAccount(String accountNumber,Customer customer)
     {
         this.accountNumber=accountNumber;
         this.customer=customer;
         this.currentAmount=0;
+        this.transactionlist= new ArrayList<>();
+
     }
 
     public String getAccountNumber() {
@@ -33,6 +39,7 @@ public class BankAccount {
         else
         {
             this.currentAmount += currentAmount;
+            transactionlist.add(new Transaction("DEPOSIT",amount));
             return true;
         }
 
@@ -46,8 +53,14 @@ public class BankAccount {
         else
         {
             currentAmount-=amount;
+            transactionlist.add(new Transaction("WITHDRAW",amount));
             return true;
         }
+    }
+
+    public List<Transaction> getTransactionlist()
+    {
+        return transactionlist;
     }
 
     @Override
