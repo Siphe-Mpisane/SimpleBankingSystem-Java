@@ -55,7 +55,7 @@ public class BankAccount {
         return "BankAccount{" +
                 "accountNumber='" + accountNumber + '\'' +
                 ", Balance=" + currentAmount +
-                ", customer=" + customer.getName()+" "+customer.getSurname() +
+                ", Customer=" + customer.getName()+" "+customer.getSurname() +
                 '}';
     }
 }
