@@ -1,10 +1,10 @@
 package model;
 
-public class Entry <K,V> {
+public class Node<K,V> {
     K key;
     V value;
-    Entry<K,V>  next;
-    public Entry(K key,V value)
+    Node<K,V> next;
+    public Node(K key, V value)
     {
         this.key=key;
         this.value=value;

@@ -38,7 +38,7 @@ public class BankAccount {
         }
         else
         {
-            this.currentAmount += currentAmount;
+            this.currentAmount += amount;
             transactionlist.add(new Transaction("DEPOSIT",amount));
             return true;
         }
@@ -65,10 +65,10 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return "BankAccount{" +
-                "accountNumber='" + accountNumber + '\'' +
-                ", Balance=" + currentAmount +
-                ", Customer=" + customer.getName()+" "+customer.getSurname() +
-                '}';
+        return "BankAccount [" +
+                "accountNumber:'" + accountNumber + '\'' +
+                ", Balance: " + currentAmount +
+                ", Customer: " + customer.getName()+" "+customer.getSurname() +
+                ']';
     }
 }

@@ -2,7 +2,10 @@ package service;
 import model.MyHashMap;
 import model.BankAccount;
 import model.Customer;
+import util.FileStorage;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Bankservice {
@@ -71,6 +74,30 @@ public class Bankservice {
         }while (accounts.containsKey(accountNumber));
         return accountNumber;
     }
+
+    //Creating a new bank account
+    public BankAccount createAccount(Customer customer)
+    {
+        String accountNumber = generateAccountNum();
+        BankAccount account = new BankAccount(accountNumber,customer);
+        accounts.put(accountNumber,account);
+        return account;
+    }
+
+    //Saving Accounts to a Textfile
+    public void saveTofile()
+    {
+        FileStorage.saveAccounts(accounts.values());
+    }
+    public void loadFroFile()
+    {
+        List<BankAccount> loaded= FileStorage.loadaccounts();
+        for(BankAccount acc:loaded)
+        {
+            accounts.put(acc.getAccountNumber(),acc);
+        }
+    }
+
 
 }
 

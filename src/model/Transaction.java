@@ -16,10 +16,10 @@ public Transaction(String type,double amount)
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "type='" + type + '\'' +
-                ", amount=" + amount +
-                ", time=" + time +
+        return "Transaction {" +
+                "type: '" + type + '\'' +
+                ", amount: " + amount +
+                ", time: " + time +
                 '}';
     }
 }
