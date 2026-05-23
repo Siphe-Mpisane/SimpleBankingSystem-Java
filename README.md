@@ -1,0 +1,1 @@
+A backend banking system designed to demonstrate the practical application of core data structures. Instead of relying purely on built-in database indexing, this project leverages specific data structures to optimize core banking operations like transaction processing, priority queuing, and account auditing
